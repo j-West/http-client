@@ -20,7 +20,6 @@ module.exports = url => {
       }
 
       let fullData = '';
-      res.on('error', error => console.log(`error:`, error.message))
       res.on('data', partialData => fullData += partialData);
       res.on('end', () => resolve(JSON.parse(fullData)));
     });
